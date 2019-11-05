@@ -2,12 +2,32 @@
 //
 
 #include <iostream>
-
+class Calculator {
+public:
+	void PrimeNumber(int, int);
+};
 int main()
 {
-    std::cout << "Hello World!\n";
+    std::cout << "Please enter two number:\n";
+	int x, y;
+	std::cin >> x >> y;
+	Calculator c;
+	c.PrimeNumber(x, y);
 }
-
+void Calculator::PrimeNumber(int x, int y) {
+	for (int i = x; i <= y; i++) {
+		bool isPrime = true;
+		for (int j = 2; j * j <= i; j++) {
+			if (i % j == 0) {
+				isPrime = false;
+				break;
+			}
+		}
+		if (isPrime) {
+			std::cout << i << " ";
+		}
+	}
+}
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
 // Debug program: F5 or Debug > Start Debugging menu
 
